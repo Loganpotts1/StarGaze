@@ -1,0 +1,51 @@
+
+$main-font:'Montserrat', sans-serif;
+
+
+
+$desktop: 1440px;
+$tablet: 768px;
+
+
+
+$primary: #40BAD5;
+$secondary: #FCBF07;
+$text: #fff;
+$text-alt: #120136;
+
+
+
+$space-amounts: (1,2,3,4,5,6);
+
+@each $space in $space-amounts {
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+    .mt-#{$space} {
+        margin-top: #{$space}rem;
+    }
+    .mb-#{$space} {
+        margin-bottom: #{$space}rem;
+    }
+    .ml-#{$space} {
+        margin-left: #{$space}rem;
+    }
+    .mr-#{$space} {
+        margin-right: #{$space}rem;
+    }
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+    .pt-#{$space} {
+        padding-top: #{$space}rem;
+    }
+    .pb-#{$space} {
+        padding-bottom: #{$space}rem;
+    }
+    .pl-#{$space} {
+        padding-left: #{$space}rem;
+    }
+    .pr-#{$space} {
+        padding-right: #{$space}rem;
+    }
+}

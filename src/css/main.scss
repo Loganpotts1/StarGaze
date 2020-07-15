@@ -1,0 +1,114 @@
+@import "config";
+@import "rocket-ship";
+@import "buttons";
+@import "navbar";
+@import "audio-page";
+@import "photos-page";
+@import "mars-page";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    // overflow-x: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+}
+
+
+.landing-page {
+    background: radial-gradient(circle, rgba(90,139,183,1) 0%, rgb(80, 57, 117) 100%);
+    display: grid;
+    height: 100vh;
+    overflow-x: hidden;
+    grid-template-rows: 10vh auto;
+    grid-template-areas: 
+    "navbar"
+    "main"
+    ;
+
+    &-content {
+        text-align: center;
+
+        h2 {
+            font-size: 1.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            color: $text;
+        }
+    }
+
+    main {
+
+        h1 {
+            color: $text;
+            font-size: 2.1rem;
+            text-align: right;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        }
+        p {
+            color: $text;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            text-align: right;
+            font-weight: lighter;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .landing-page {
+
+        &-header {
+            padding: 5.5rem 10% .5rem 0;
+        }
+        &-content {
+            padding-top: 4rem;
+
+            h2{
+                font-size: 1.7rem;
+            }
+        }
+        main {
+            
+            h1 {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .landing-page {
+
+        &-header {
+            padding: 4rem 22% .5rem 0;
+        }
+        &-content {
+            position: absolute;
+            left: 63.7rem;
+            bottom: 9rem;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        main {
+            
+            h1 {
+                font-size: 4.5rem;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,58 @@
+.audio-page {
+    background: radial-gradient(circle, rgba(90,139,183,1) 0%, rgb(80, 57, 117) 100%);
+    display: grid;
+    height: 100vh;
+    overflow-x: hidden;
+    grid-template-rows: 10vh auto;
+    grid-template-areas: 
+    "navbar"
+    "main"
+    ;
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 0 auto 0;
+        grid-template-areas: "l-gutter content r-gutter";
+
+    }
+    .content {
+        grid-area: content;
+    }
+}
+.l-gutter {
+    grid-area: l-gutter;
+}
+.r-gutter {
+    grid-area: r-gutter;
+}
+.heading {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+
+    h3 {
+        font-weight: lighter;
+    }
+}
+
+
+.audio-card {
+    color: $text;
+    background-color: rgba(0,0,0,0);
+}
+
+.search {
+    justify-self: center;
+    width: 200px;
+}
+@media screen and (min-width: $tablet) {
+    .audio-page {
+        main {
+            grid-template-columns: 1fr 4fr 1fr;
+        }
+    }
+    .search {
+        width: 300px;
+    }
+}

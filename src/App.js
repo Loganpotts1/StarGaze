@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/main.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import AudioPage from "./components/AudioPage";
+import {createMuiTheme} from "@material-ui/core";
+import PhotosPage from './components/PhotosPage';
+import MarsPage from "./components/MarsPage";
 
-function App() {
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Switch>
+
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+
+      <Route path="/photos">
+        <PhotosPage />
+      </Route>
+
+      <Route path="/audio">
+        <AudioPage />
+      </Route>
+
+      <Route path="/mars_rover">
+        <MarsPage />
+      </Route>
+
+    </Switch>
+    </Router>
   );
 }
-
-export default App;

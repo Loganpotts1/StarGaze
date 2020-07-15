@@ -1,0 +1,71 @@
+.btn-primary {
+    border-style: none;
+    background: $primary;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    width: 146.51px;
+    height: 45px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: $text-alt;
+    &:hover{
+        font-size: 21px;
+        border-color: darken($primary,30%);
+        border-style: groove;
+        background: darken($primary, 10%);
+        box-shadow: none;
+        color: darken($text-alt, 10%);
+    }
+}
+
+.btn-secondary {
+    border-style: none;
+    background: $secondary;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    width: 146.51px;
+    height: 45px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: $text-alt;
+    &:hover {
+        font-size: 21px;
+        border-color: darken($secondary,30%);
+        border-style: groove;
+        background: darken($secondary, 8%);
+        box-shadow: none;
+        color: darken($text-alt, 10%);
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .btn-primary {
+        width: 25vw;
+        height: 6vh;
+        font-size: 1.7rem;
+        &:hover {
+            font-size: 1.65rem;
+        }
+    }
+    .btn-secondary {
+        width: 25vw;
+        height: 6vh;
+        font-size: 1.7rem;
+        &:hover {
+            font-size: 1.65rem;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .btn-primary {
+        margin-top: 2rem;
+        width: 14rem;
+    }
+    .btn-secondary {
+        margin-top: 2rem;
+        width: 14rem;
+    }
+}

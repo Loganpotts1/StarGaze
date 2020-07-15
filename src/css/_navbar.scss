@@ -1,0 +1,156 @@
+
+nav {
+    width: 100%;
+    z-index: 99;
+
+    .nav-links {
+        opacity: 0;
+        position: absolute;
+    }
+}
+
+.navbar {
+    background-color: $text;
+    grid-area: navbar;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    width: 2rem;
+}
+.logo-text {
+    text-decoration: none;
+    color: $text-alt;
+    font-weight: 600;
+}
+
+.moon-menu {
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.navbar-active {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 3.5rem 3.5rem 3.5rem;
+    text-align: center;
+    width: 100%;
+    height: 15rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 4.3rem;
+    z-index: 3;
+    background-color: $text;
+    border-radius: 12px;
+    -webkit-animation: hamburger .8s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: hamburger .8s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+
+    li {
+        list-style: none;
+
+        a{
+            text-decoration: none;
+            color: $text-alt;
+        }
+    }
+}
+
+@keyframes hamburger {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: $tablet) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "logo nav-div";
+    }
+    .moon-menu {
+        display: none;
+    }
+    .logo {
+        display: static;
+        grid-area: "logo";
+    }
+    .logo-text {
+        color: $text;
+    }
+    .nav-div {
+        grid-area: "nav-div";
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+    .nav-links {
+        display: flex;
+        -webkit-animation: desktop-nav 0s ease both !important;
+        animation: desktop-nav 0s ease both !important;
+    
+        li {
+            list-style: none;
+            padding: 0 2vw;
+            align-items: bottom;
+    
+            a{
+                text-decoration: none;
+                color: $text;
+                font-size: 1.3rem;
+                font-weight: lighter;
+            }
+        }
+    }
+}
+
+
+@keyframes desktop-nav {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@media screen and (min-width: $desktop) {
+    nav {
+        grid-template-columns: auto 40%;
+    }
+    .nav-div {
+        justify-content: flex-end;
+    }
+    .nav-links {
+
+        li {
+            padding: 0 3vw;
+        }
+    }
+    .logo {
+        margin-left: 3rem;
+    }
+
+}

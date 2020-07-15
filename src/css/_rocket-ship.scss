@@ -1,0 +1,264 @@
+.rocket-ship {
+    width: 105%;
+    height: 100%;
+    max-width: 500px;
+    position: relative;
+    left: -5rem;
+    top: 2.5rem;
+
+    @media screen and (min-width: $tablet) {
+        width: 70%;
+        max-width: 600px;
+    }
+    @media screen and (min-width: $desktop) {
+        left: 15rem;
+        top: -5rem;
+        max-width: 750px;
+    }
+}
+
+
+#Ship {
+	-webkit-animation: vibrate 0.25s linear infinite both;
+	        animation: vibrate 0.25s linear infinite both;
+}
+#FarLeftFlame, #FarRightFlame {
+	-webkit-animation: pulsate-up 2s ease-in-out infinite both;
+            animation: pulsate-up 2s ease-in-out infinite both;
+            transform-origin: center;
+            transform-box: fill-box;
+}
+#LeftFlame,#RightFlame {
+    -webkit-animation: pulsate-down .15s ease-in-out infinite both;
+            animation: pulsate-down .15s ease-in-out infinite both;
+            transform-origin: center;
+            transform-box: fill-box;
+}
+#Star1 {
+	-webkit-animation: ping 4s linear infinite both;
+            animation: ping 4s linear infinite both;
+            transform-origin: center;
+            transform-box: fill-box;
+}
+#Star2 {
+    -webkit-animation: ping 0.8s ease-in-out infinite both;
+    animation: ping 0.8s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star3 {
+    -webkit-animation: ping 1s ease-in-out infinite both;
+    animation: ping 1s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star4 {
+    -webkit-animation: ping 2s ease-in-out infinite both;
+    animation: ping 2s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star5 {
+    -webkit-animation: ping 3s ease-in-out infinite both;
+    animation: ping 3s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star6 {
+    -webkit-animation: ping 4s ease-in-out infinite both;
+    animation: ping 4s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star7 {
+    -webkit-animation: ping 3.4s ease-in-out infinite both;
+    animation: ping 3.4s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star8 {
+    -webkit-animation: pin 2.6s ease-in-out infinite both;
+    animation: pin 2.6s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star9 {
+    -webkit-animation: ping 2.6s ease-in-out infinite both;
+    animation: ping 2.6s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star10 {
+    -webkit-animation: ping 3.4s ease-in-out infinite both;
+    animation: ping 3.4s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#Star11 {
+    -webkit-animation: ping 4s ease-in-out infinite both;
+    animation: ping 4s ease-in-out infinite both;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+
+
+@keyframes vibrate {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    10% {
+        -webkit-transform: translate(-1px, 1px);
+                transform: translate(-1px, 1px);
+    }
+    20% {
+      -webkit-transform: translate(-1.5px, 1.5px);
+              transform: translate(-1.5px, 1.5px);
+    }
+    10% {
+        -webkit-transform: translate(-1px, -1px);
+                transform: translate(-1px, -1px);
+    }
+    40% {
+      -webkit-transform: translate(-1.5px, -1.5px);
+              transform: translate(-1.5px, -1.5px);
+    }
+    10% {
+        -webkit-transform: translate(1px, 1px);
+                transform: translate(1px, 1px);
+    }
+    60% {
+      -webkit-transform: translate(1.5px, 1.5px);
+              transform: translate(1.5px, 1.5px);
+    }
+    10% {
+        -webkit-transform: translate(1px, -1px);
+                transform: translate(1px, -1px);
+    }
+    80% {
+      -webkit-transform: translate(1.5px, -1.5px);
+              transform: translate(1.5px, -1.5px);
+    }
+    10% {
+        -webkit-transform: translate(1px, -1px);
+                transform: translate(1px, -1px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+}
+  
+@keyframes pulsate-up {
+    0% {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8);
+    }
+    10% {
+        -webkit-transform: scale(1.6);
+                transform: scale(1.6);
+    }
+    20% {
+        -webkit-transform: scale(1.4);
+                transform: scale(1.4);
+    }  
+    30% {
+        -webkit-transform: scale(1.35);
+                transform: scale(1.35);
+    }
+    40% {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+    }
+    50% {
+        -webkit-transform: scale(.9);
+                transform: scale(.9);
+    }
+    60% {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+    70% {
+        -webkit-transform: scale(1.35);
+                transform: scale(1.35);
+    }
+    80% {
+      -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+    }
+    90% {
+        -webkit-transform: scale(1.6);
+                transform: scale(1.6);
+    }
+    100% {
+        -webkit-transform: scale(1.8);
+                transform: scale(1.8);
+    }
+}
+
+@keyframes pulsate-down {
+    0% {
+      -webkit-transform: scale(.6);
+              transform: scale(.6);
+              opacity: .1;
+    }
+    10% {
+        -webkit-transform: scale(.65);
+                transform: scale(.65);
+                opacity: .5;
+    }
+    25% {
+        -webkit-transform: scale(.7);
+                transform: scale(.7);
+                opacity: .8;
+    }  
+    40% {
+        -webkit-transform: scale(.8);
+                transform: scale(.8);
+                opacity: .9;
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+              opacity: 1;
+    }
+    65% {
+        -webkit-transform: scale(.8);
+                transform: scale(.8);
+                opacity: .9;
+    }
+    75% {
+        -webkit-transform: scale(.7);
+                transform: scale(.7);
+                opacity: .8;
+    }
+      90% {
+        -webkit-transform: scale(.65);
+                transform: scale(.65);
+                opacity: .5;
+    }
+    100% {
+      -webkit-transform: scale(.6);
+              transform: scale(.6);
+              opacity: .1;
+    }
+}
+
+@keyframes ping {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      opacity: 3;
+    }
+    80% {
+      -webkit-transform: scale(3);
+              transform: scale(3);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(4);
+              transform: scale(4);
+      opacity: 0;
+    }
+}

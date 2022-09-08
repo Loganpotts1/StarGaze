@@ -67,7 +67,7 @@ export default function PhotosPage() {
     React.useEffect(() => {
         setIsMounted(true);
         console.log(photos);
-    });
+    }, [photos]);
     
 
 
@@ -80,17 +80,27 @@ export default function PhotosPage() {
                         <h3>Type in a search<br/>to look through NASA's photos</h3>
                         <form className="search" onSubmit={handleSearch}>
                             <ThemeProvider theme={searchTheme}>
-                                <TextField color="primary" type="text" variant="outlined" label="Search (e.g.'Saturn')" value={search} onChange={(event) => {setSearch(event.target.value)}}/>
+                                <TextField
+                                color="primary"
+                                type="text"
+                                variant="outlined"
+                                label="Search (e.g.'Saturn')"
+                                value={search} onChange={(event) => {setSearch(event.target.value)}}
+                                />
                             </ThemeProvider>
                         </form>
                     </div>
-                    <Masonry options={masonryOptions} updateOnEachImageLoad="true" className="masonry">
+                    <div className='images'>
                         {isMounted && photos.map(photo => (
-                            <div className="grid-item">
-                                    <img className="grid-image" key={photo.key} src={photo.thumbnail} onClick={()=> window.open(`${photo.highres}`, "_blank")}></img>
-                            </div>
+                            <img
+                            className="grid-image"
+                            alt="nasa"
+                            key={photo.key}
+                            src={photo.thumbnail}
+                            onClick={()=> window.open(`${photo.highres}`, "_blank")}
+                            />
                         ))}
-                    </Masonry>
+                    </div>
                 </div>
             </main>
         </div>

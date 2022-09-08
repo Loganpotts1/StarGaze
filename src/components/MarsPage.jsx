@@ -33,15 +33,15 @@ export default function MarsPage() {
         axios.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos", {params: {sol: query, api_key: "DEMO_KEY"}})
         .then(res => {
             console.log(res);
-                res.data.photos.map((data,index) => {
-                    let imageInfo = {
-                        key: index,
-                        highres: data.img_src
-                    };
-                    if (index<50)   {
-                        setPhotos(prevPhotos => [...prevPhotos, imageInfo]);
-                    }
-                })
+            res.data.photos.map((data,index) => {
+                let imageInfo = {
+                    key: index,
+                    highres: data.img_src
+                };
+                if (index<50)   {
+                    setPhotos(prevPhotos => [...prevPhotos, imageInfo]);
+                }
+            })
         })
     }
 
@@ -54,12 +54,12 @@ export default function MarsPage() {
     }
 
     if (!isMounted) {
-        getImage('2500');
+        getImage('3000');
     }
 
     React.useEffect(() => {
         setIsMounted(true);
-    })
+    }, [])
 
     return (
         <div className="mars-page">
@@ -68,19 +68,30 @@ export default function MarsPage() {
                 <div className="content mt-4">
                     <div className="heading mb-2">
                         <h3>Type in a "sol"<br/>to look through Mars' photos</h3>
-                        <form className="search" onSubmit={handleSearch}>
+                        <form className="search"onSubmit={handleSearch}>
                             <ThemeProvider theme={searchTheme}>
-                                <TextField color="primary" type="text" variant="outlined" label="Search (e.g.'1000')" value={search} onChange={(event) => {setSearch(event.target.value)}}/>
+                                <TextField
+                                color="primary"
+                                type="text"
+                                variant="outlined"
+                                label="Search (e.g.'1000')"
+                                value={search}
+                                onChange={(event) => {setSearch(event.target.value)}}
+                                />
                             </ThemeProvider>
                         </form>
                     </div>
-                    <Masonry options={masonryOptions} updateOnEachImageLoad="true" className="masonry">
+                    <div className='images'>
                         {isMounted && photos.map(photo => (
-                            <div className="grid-item">
-                                    <img className="grid-image" key={photo.key} src={photo.highres} onClick={()=> window.open(`${photo.highres}`, "_blank")}></img>
-                            </div>
+                            <img
+                            className="grid-image"
+                            alt="nasa"
+                            key={photo.key}
+                            src={photo.highres}
+                            onClick={()=> window.open(`${photo.highres}`, "_blank")}
+                            />
                         ))}
-                    </Masonry>
+                    </div>
                 </div>
             </main>
         </div>

@@ -8,13 +8,21 @@
     "navbar"
     "main"
     ;
-    .grid-item {
-        object-fit: cover;
-        width: 80vw;
-        display: flex;
+    .images {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 400px);
+        grid-auto-rows: 400px;
+        padding: 2rem;
         justify-content: center;
-        align-items: center;
-        margin: 5px;
+        grid-row-gap: 2rem;
+        grid-column-gap: 2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
     main {
         grid-area: main;
